@@ -1,8 +1,6 @@
 
 node 
-  {
-	  de
-	  
+  {		  
 	  stage ('workspace clean') {
 	  cleanWs()	  
 	  }
