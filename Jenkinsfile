@@ -1,7 +1,7 @@
 
 node 
   {
-	  
+	  de
 	  
 	  stage ('workspace clean') {
 	  cleanWs()	  
@@ -12,7 +12,7 @@ node
 	  }	  
     	  stage('Build Stage')
 	  {	   
-	   sh "mvn -B clean verify package"
+	   sh "ls"
 	   echo "Build Successful"
 	  }
 	  stage('Test'){		  
