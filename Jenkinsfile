@@ -20,7 +20,7 @@ node
 	  }
           stage('deploy') {
 		  withCredentials( [usernamePassword( credentialsId: 'tomcat', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-		  sh "curl -u $USERNAME:$PASSWORD -T /var/lib/jenkins/workspace/Petclinic/target/spring-petclinic-1.5.1.jar 'http://54.244.208.51:8081/manager/text/deploy?path=/Petclinic&update=true'"
+		  sh "curl -u $USERNAME:$PASSWORD -T /var/lib/jenkins/workspace/Petclinic/target/spring-petclinic-1.5.1.jar 'http://localhost:8081/manager/text/deploy?path=/Petclinic&update=true'"
 		  }
 		  echo "Deploy successful"
 	  }	
