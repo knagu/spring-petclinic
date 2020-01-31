@@ -1,6 +1,9 @@
 
 node 
   {		  
+          tool {
+                  maven 'maven'
+          }             
 	  stage ('workspace clean') {
 	  cleanWs()	  
 	  }
@@ -10,17 +13,8 @@ node
 	  }	  
     	  stage('Build Stage')
 	  {	   
-	   sh "ls"
+	   sh "mvn clean"
 	   echo "Build Successful"
-	  }
-	  stage('Test'){		  
-		  sh "${mvnHome}/bin/mvn -B test"
-		  echo "Tests successful"
-	  }
-	  stage('deploy') {
-		  withCredentials( [usernamePassword( credentialsId: 'tomcat', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-		  sh "curl -u $USERNAME:$PASSWORD -T /var/lib/jenkins/workspace/ApplicationDemo@2/gameoflife-web/target/gameoflife.war 'http://localhost:8081/manager/text/deploy?path=/GameofLife&update=true'"
-		  }
-		  echo "Deploy successful"
-	  }	 	 
+	  }	  
+	  	 	 
   }
