@@ -7,7 +7,7 @@ node
 	  }
 	  stage('GitSCM')
 	  {
-		  git url: 'https://github.com/knagu/game-of-life.git'
+		  git url: 'https://github.com/knagu/spring-petclinic.git'
 	  }	  
     	  stage('Build Stage')
 	  {	   
